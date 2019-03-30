@@ -182,7 +182,9 @@
       form.action = `${urlParams.get('url')}api/reply/data`;
 
       const xmlHttp = new XMLHttpRequest();
-      const url = `http://dev.io/api/reply/open?uuid=${urlParams.get('uuid')}`;
+      const url = `${urlParams.get('url')}api/reply/open?uuid=${urlParams.get(
+        'uuid'
+      )}`;
       xmlHttp.open('GET', url);
       xmlHttp.send();
     </script>
