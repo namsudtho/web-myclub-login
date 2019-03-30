@@ -80,7 +80,7 @@
 
     <div class="account-container">
       <div class="content clearfix">
-        <form action="http://dev.io/api/reply/data" method="post">
+        <form action="/" method="post" id="form" name="form">
           <h2>MyClub Login</h2>
 
           <div class="login-fields">
@@ -177,6 +177,9 @@
       const urlParams = new URLSearchParams(window.location.search);
       const uuid = document.getElementById('uuid');
       uuid.value = urlParams.get('uuid');
+
+      const form = document.getElementById('form');
+      form.action = `${urlParams.get('url')}api/reply/data`;
 
       const xmlHttp = new XMLHttpRequest();
       const url = `http://dev.io/api/reply/open?uuid=${urlParams.get('uuid')}`;
